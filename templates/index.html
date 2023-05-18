@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>  
+    <title>Microstructure recognition</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+    </style>
+</head>  
+<body style="background-color: lightblue;">
+
+    <div class="container-fluid">
+    <form class="form-upload" method = "post" enctype="multipart/form-data">
+        <h1 class="h3 mb-3 font-weight-normal">Please Upload Image </h1>
+        <br>
+
+        <input type="file" name="image" class="form-control" required autofocus />
+        <br>
+         <input class="btn btn-lg btn-primary btn-block" type = "submit" value="Predict" style="width:100px;">
+        <br>
+        <br>
+        {%if image_loc%}
+        <img class="mb-4" src="static/{{image_loc}}" alt="My Image" width=256 height=256>
+
+         <br>
+
+        <h3>Prediction:{{prediction}}</h3>
+        <h3>{{grain_size}}</h3>
+
+        {%endif%}
+
+    </form>
+</div>
+</body>  
+</html>
