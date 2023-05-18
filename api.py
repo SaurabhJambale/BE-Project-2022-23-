@@ -78,4 +78,4 @@ def upload_predict():
 
 
 if __name__ == '__main__':
-    app.run(port=1200,debug=True)
+    app.run(debug=False,host='0.0.0.0')
